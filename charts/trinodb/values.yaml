@@ -1,0 +1,82 @@
+cluster: trinodb-cluster
+
+image:
+  repository: trinodb/trino
+  tag: 354
+  pullPolicy: IfNotPresent
+  securityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+
+health:
+  livenessProbe:
+    initialDelaySeconds: 60
+    periodSeconds: 10
+  readinessProbe:
+    initialDelaySeconds: 60
+    periodSeconds: 10
+
+server:
+  workers: 1
+  node:
+    environment: demo
+    dataDir: /data/trino
+    pluginDir: /usr/lib/trino/plugin
+  log:
+    trino:
+      level: INFO
+  config:
+    path: /etc/trino/
+    http:
+      port: 8081
+    query:
+      maxMemory: 512MB
+      maxMemoryPerNode: 256MB
+      maxTotalMemory: 512MB
+      maxTotalMemoryPerNode: 256MB
+  jvm:
+    maxHeapSize: 512M
+    gcMethod:
+      type: UseG1GC
+      g1:
+        heapRegionSize: 32M
+        # Connectors configuration usually contains sensitive data (like passwords, usernames, ...)
+        # so data is stored in a secret
+
+connectors: {}
+  # Connectors configuration usually contains sensitive data (like passwords, usernames, ...)
+  # so data is stored in a secret
+  # mysql.properties: |-
+  #   connector.name=mysql
+  #   connection-url=jdbc:mysql://mysqlserver:3306
+  #   connection-user=mysqluser
+  #   connection-password=mysqlpassword
+  # elk.properties: |-
+  #   connector.name=elasticsearch
+  #   elasticsearch.host=elasticsearchserver
+  #   elasticsearch.port=9200
+  #   elasticsearch.default-schema-name=default
+  #   elasticsearch.security=PASSWORD
+  #   elasticsearch.auth.user=elastiuser
+  #   elasticsearch.auth.password=elasticpassword
+  #   elasticsearch.tls.enabled=true
+
+service:
+  type: ClusterIP
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 1.5
+    memory: 1024Mi
+  #requests:
+  #  cpu: 100M
+  #  memory: 128Mi
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
