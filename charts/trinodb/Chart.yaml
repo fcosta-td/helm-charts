@@ -18,7 +18,7 @@ keywords:
 maintainers:
 - email: filipe.costa@talkdesk.com
   name: filipe-costa
-name: trino
+name: trinodb
 sources:
 - https://github.com/fcosta-td/kubernetes/charts/trinodb
 - https://github.com/trinodb/trino
