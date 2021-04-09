@@ -1,7 +1,9 @@
 #!/bin/bash
 
-$list=$(ls ./charts | grep -v / | xargs echo | sed 's/ /,/g')
-echo $list
+#$list=$(ls ./charts | grep -v / | xargs echo | sed 's/ /,/g')
 
-helm package charts/$list --destination .deploy
-cr upload -o fcosta-td -r kubernetes -p .deploy
+for chart in $(ls -d charts/*); do
+ helm package $chart --destination .deploy
+done
+
+cr upload -o fcosta-td -r kubernetes -p .deploy --config ~/.cr.yaml
