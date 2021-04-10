@@ -22,4 +22,4 @@ name: trinodb
 sources:
 - https://github.com/fcosta-td/kubernetes/charts/trinodb
 - https://github.com/trinodb/trino
-version: 1.0.0
+version: 0.9.0
