@@ -16,12 +16,3 @@ express or implied, including but not limited to the warranties of merchantabili
 fitness for a particular purpose and noninfringement. in no event shall Barracuda be liable for any claim,
 damages, or other liability, whether in an action of contract, tort or otherwise, arising from,
 out of or in connection with the source code.
-
-https://tech.paulcz.net/blog/creating-a-helm-chart-monorepo-part-1/
-
-
-helm repo add trinodb https://fcosta-td.github.io/kubernetes
-
-
-commands:
-cr index -i ./index.yaml -p .deploy -o fcosta-td -r kubernetes -c https://github.com/fcosta-td/kubernetes
