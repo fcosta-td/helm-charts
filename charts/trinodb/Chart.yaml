@@ -5,21 +5,15 @@ home: https://trino.io
 icon: https://trino.io/assets/images/trino-logo/trino-ko_tiny-alt.svg
 keywords:
 - trino
-- trinosql
 - trinodb
 - presto
 - prestosql
 - prestodb
-- big data
-- database
-- sql
-- query engine
-- high performance
 maintainers:
 - email: filipe.costa@talkdesk.com
   name: filipe-costa
 name: trinodb
 sources:
-- https://github.com/fcosta-td/kubernetes/charts/trinodb
+- https://github.com/fcosta-td/helm-charts/charts/trinodb
 - https://github.com/trinodb/trino
-version: 0.9.1
+version: 0.9.2
