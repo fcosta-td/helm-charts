@@ -21,7 +21,7 @@ jobs:
             .circleci/release.sh
 
 workflows:
-  version: 2
+  version: 2.1
   release:
     jobs:
       - lint-scripts
@@ -30,4 +30,4 @@ workflows:
             tags:
               ignore: /.*/
             branches:
-              only: master
+              only: main
