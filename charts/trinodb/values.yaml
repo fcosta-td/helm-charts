@@ -40,6 +40,7 @@ server:
       type: UseG1GC
       g1:
         heapRegionSize: 32M
+  labels: {}
 
 # Connectors configuration usually contains sensitive data (like passwords, usernames, ...)
 # so data is stored in a secret
