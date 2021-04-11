@@ -1,5 +1,5 @@
 # Helm-Charts
-[![Release Charts](https://github.com/fcosta-td/helm-charts/workflows/Release%20Charts/badge.svg?branch=main)]
+![Release Charts](https://github.com/fcosta-td/helm-charts/workflows/Release%20Charts/badge.svg?branch=main)
 
 ## Charts
 - [TrinoDB](./charts/trinodb/README.md)
