@@ -105,7 +105,7 @@ update_index() {
     if ! git diff --quiet; then
         git add .
         git commit --message="Update index.yaml" --signoff
-        git push origin gh-pages
+        git push "$CIRCLE_REPOSITORY_URL" gh-pages
     fi
 }
 
