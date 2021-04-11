@@ -16,4 +16,4 @@ name: trinodb
 sources:
 - https://github.com/fcosta-td/helm-charts/charts/trinodb
 - https://github.com/trinodb/trino
-version: 1.0.3
+version: 1.0.4
