@@ -76,7 +76,7 @@ release_charts() {
 }
 
 update_index() {
-    cr index -i ./index.yaml -p .deploy -o "$GIT_USERNAME" -r "$GIT_REPOSITORY_NAME" -c "$GIT_REPOSITORY_URL" -t "$CH_TOKEN"
+    cr index -p .deploy/index.yaml -o "$GIT_USERNAME" -r "$GIT_REPOSITORY_NAME" -c "$GIT_REPOSITORY_URL" -t "$CH_TOKEN"
     ls
     pwd
 
