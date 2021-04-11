@@ -10,10 +10,10 @@ keywords:
 - prestosql
 - prestodb
 maintainers:
-- email: filipe.costa@talkdesk.com
-  name: filipe-costa
+- name: fcosta-td
+  email: filipe.costa@talkdesk.com
 name: trinodb
 sources:
 - https://github.com/fcosta-td/helm-charts/charts/trinodb
 - https://github.com/trinodb/trino
-version: 0.0.0
+version: 0.1.0
