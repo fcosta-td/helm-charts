@@ -3,6 +3,7 @@
 set -o errexit
 set -o nounset
 set -o pipefail
+set -x
 
 : "${CH_TOKEN:?Environment variable CH_TOKEN must be set}"
 : "${GIT_REPOSITORY_URL:?Environment variable GIT_REPO_URL must be set}"
