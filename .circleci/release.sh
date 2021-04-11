@@ -105,7 +105,7 @@ update_index() {
     if ! git diff --quiet; then
         git add .
         git commit --message="Update index.yaml" --signoff
-        git push "$GIT_REPOSITORY_URL" gh-pages
+        git push origin gh-pages
     fi
 }
 
