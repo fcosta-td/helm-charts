@@ -38,8 +38,5 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        env:
-          PROXY_TOKEN: ${{ secrets.CI_CGA_PROXY_TOKEN }}
         run: |
-          envsubst < charts/cga-proxy/ci/test-values.yaml.tpl > charts/cga-proxy/ci/test-values.yaml
           ct install --config ct.yaml
