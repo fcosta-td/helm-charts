@@ -1,0 +1,7 @@
+target-branch: main
+chart-dirs:
+  - charts
+chart-repos:
+  trinodb=https://fcosta-td.github.io/helm-charts
+helm-extra-args: --timeout 600s
+validate-maintainers: false
