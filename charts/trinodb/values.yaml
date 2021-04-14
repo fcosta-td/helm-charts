@@ -5,8 +5,8 @@ image:
   tag: 354
   pullPolicy: IfNotPresent
   securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
+    runAsUser: 1000
+    runAsGroup: 1000
 
 health:
   livenessProbe:
