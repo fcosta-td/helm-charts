@@ -1,0 +1,25 @@
+server:
+  workers: 0
+  log:
+    trino:
+      level: INFO
+  config:
+    query:
+      maxMemory: 32MB
+      maxMemoryPerNode: 16MB
+      maxTotalMemory: 32MB
+      maxTotalMemoryPerNode: 16MB
+  jvm:
+    maxHeapSize: 64M
+    gcMethod:
+      type: UseG1GC
+      g1:
+        heapRegionSize: 16M
+
+health:
+  livenessProbe:
+    initialDelaySeconds: 90
+    periodSeconds: 20
+  readinessProbe:
+    initialDelaySeconds: 90
+    periodSeconds: 20
