@@ -22,7 +22,7 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v1.1
         with:
-          version: v3.4.1
+          version: v3.5.1
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.0
@@ -30,4 +30,4 @@ jobs:
           charts_dir: charts
           config: cr.yaml
         env:
-          CR_TOKEN: "${{ secrets.CR_TOKEN }}"
+          CR_TOKEN: "${{ secrets.CH_TOKEN }}"
