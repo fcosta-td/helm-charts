@@ -3,6 +3,29 @@ entries:
   trinodb:
   - apiVersion: v1
     appVersion: "355"
+    created: "2021-04-19T16:51:47.128664572Z"
+    description: High performance, distributed SQL query engine for big data
+    digest: aa37c07fc6c56a883eb40701e59a1a3ac17303859cf21d9ea1d1abd16944e72b
+    home: https://trino.io
+    icon: https://trino.io/assets/images/trino-logo/trino-ko_tiny-alt.svg
+    keywords:
+    - trino
+    - trinodb
+    - presto
+    - prestosql
+    - prestodb
+    maintainers:
+    - email: filipe.costa@talkdesk.com
+      name: fcosta-td
+    name: trinodb
+    sources:
+    - https://github.com/fcosta-td/helm-charts/charts/trinodb
+    - https://github.com/trinodb/trino
+    urls:
+    - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.5/trinodb-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: "355"
     created: "2021-04-18T16:27:52.472481554Z"
     description: High performance, distributed SQL query engine for big data
     digest: f75c6db7f4f31918754defd46a1a7dbcc0c5195d0171adaaf2970b3963933522
@@ -47,4 +70,4 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.3/trinodb-0.1.3.tgz
     version: 0.1.3
-generated: "2021-04-18T16:27:52.472490054Z"
+generated: "2021-04-19T16:51:47.128676272Z"
