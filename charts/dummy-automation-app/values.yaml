@@ -37,25 +37,17 @@ service:
   port: 8080
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: dummy-automation-app.eks-internaltools01.ops.us-east-1.aws.pub.talkdeskstg.com
+    - host: example.com
       paths:
-        - backend:
-            service:
-              name: dummy-automation-app
-              port:
-                number: 8080
-          path: /
+        - path: /
           pathType: ImplementationSpecific
-  tls:
-  - hosts:
-    - dummy-automation-app.eks-internaltools01.ops.us-east-1.aws.pub.talkdeskstg.com
-    secretName: wildcard-stg-cert-tls
+  tls: []
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
