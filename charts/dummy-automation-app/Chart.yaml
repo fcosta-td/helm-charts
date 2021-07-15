@@ -1,7 +1,7 @@
 apiVersion: v2
 name: dummy-automation-app
 description: A Helm chart dummy-automation-app
-version: 0.0.4
+version: 0.0.5
 appVersion: "ec7a94265d850772df71337d49acc3520a47bf56"
 sources:
 - https://github.com/fcosta-td/helm-charts/charts/dummy-automation-app
