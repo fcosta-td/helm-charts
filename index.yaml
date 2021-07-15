@@ -3,6 +3,16 @@ entries:
   dummy-automation-app:
   - apiVersion: v2
     appVersion: ec7a94265d850772df71337d49acc3520a47bf56
+    created: "2021-07-15T14:43:43.209098141Z"
+    description: A Helm chart dummy-automation-app
+    digest: b3adc940e1261678deeda832d8211fd4aa593a8fa5b31c21ff1be1c0a296d45f
+    name: dummy-automation-app
+    type: application
+    urls:
+    - https://github.com/fcosta-td/helm-charts/releases/download/dummy-automation-app-0.0.1/dummy-automation-app-0.0.1.tgz
+    version: 0.0.1
+  - apiVersion: v2
+    appVersion: ec7a94265d850772df71337d49acc3520a47bf56
     created: "2021-07-15T14:27:01.109740962Z"
     description: A Helm chart dummy-automation-app
     digest: 0391ab3df6bc8d2a97a25ad091e3da5f18945a8dcfa77dd2928453967dc9e0f7
@@ -104,4 +114,4 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.3/trinodb-0.1.3.tgz
     version: 0.1.3
-generated: "2021-07-15T14:27:01.109780162Z"
+generated: "2021-07-15T14:43:43.209372644Z"
