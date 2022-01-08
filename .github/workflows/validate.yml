@@ -1,9 +1,9 @@
-name: Lint and Test Charts
+name: Validate Charts
 
 on: pull_request
 
 jobs:
-  lint-test:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,10 +14,10 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v1.1
         with:
-          version: v3.5.1
+          version: v3.7.1
 
       - name: Set up chart-testing
-        uses: helm/chart-testing-action@v2.1.0
+        uses: helm/chart-testing-action@v2.2.0
 
       - name: Run chart-testing (list-changed)
         id: list-changed
@@ -26,13 +26,13 @@ jobs:
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           fi
-      - name: Run chart-testing (lint)
+      - name: Lint chart
         run: ct lint --config ct.yaml
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
         if: steps.list-changed.outputs.changed == 'true'
 
-      - name: Run chart-testing (install)
+      - name: Deploy chart
         run: |
           ct install --config ct.yaml
