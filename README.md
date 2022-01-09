@@ -2,6 +2,9 @@
 ![Release Charts](https://github.com/fcosta-td/helm-charts/workflows/Release%20Charts/badge.svg?branch=main)
 
 ## Charts
+- [AlertManager](./charts/alertmanager/README.md)
+- [Grafana](./charts/grafana/README.md)
+- [Kube-State-Metrics](./charts/kube-state-metrics/README.md)
 - [TrinoDB](./charts/trinodb/README.md)
 
 
