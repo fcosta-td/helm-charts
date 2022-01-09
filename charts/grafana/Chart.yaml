@@ -8,4 +8,9 @@ name: grafana
 sources:
 - https://github.com/fcosta-td/helm-charts/charts/grafana
 type: application
-version: 6.7.0
+keywords:
+- monitoring
+maintainers:
+- name: demo
+  email: demo@demo.com
+version: 6.7.2
