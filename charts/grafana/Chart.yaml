@@ -13,4 +13,6 @@ keywords:
 maintainers:
 - name: demo
   email: demo@demo.com
-version: 6.7.7
+- name: demo2
+  email: demo2@demo.com
+version: 6.7.8
