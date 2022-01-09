@@ -90,6 +90,26 @@ entries:
   grafana:
   - apiVersion: v2
     appVersion: 7.5.1
+    created: "2022-01-09T12:29:34.217249714Z"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: cfd9a40b542241e3c92202725255edd65756077e77b08f5482859c8d37963361
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    keywords:
+    - monitoring
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: demo@demo.com
+      name: demo
+    name: grafana
+    sources:
+    - https://github.com/fcosta-td/helm-charts/charts/grafana
+    type: application
+    urls:
+    - https://github.com/fcosta-td/helm-charts/releases/download/grafana-6.7.5/grafana-6.7.5.tgz
+    version: 6.7.5
+  - apiVersion: v2
+    appVersion: 7.5.1
     created: "2022-01-09T12:19:18.970419508Z"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 6f50aed8b3f526d46d48a54df67d0d5cd1ad48a67dfec1c61817c9b846c70946
@@ -284,4 +304,4 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.3/trinodb-0.1.3.tgz
     version: 0.1.3
-generated: "2022-01-09T12:19:18.970478109Z"
+generated: "2022-01-09T12:29:34.21980114Z"
