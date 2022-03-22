@@ -253,6 +253,32 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/kube-state-metrics-4.3.0/kube-state-metrics-4.3.0.tgz
     version: 4.3.0
+  telegraf-operator:
+  - apiVersion: v2
+    appVersion: v1.3.5
+    created: "2022-03-22T14:30:34.833683369Z"
+    description: A Helm chart for Kubernetes to deploy telegraf-operator
+    digest: 8b19e61ebf775cf51bc4fe7580b346fc73124f7674dbf7ddc681909bdc860cb9
+    home: https://github.com/influxdata/telegraf-operator
+    keywords:
+    - telegraf
+    - telegraf-operator
+    - sidecar
+    - operator
+    - injector
+    - mutatingwebhook
+    - influxdata
+    - influxdb
+    kubeVersion: '>= 1.13.0-r0'
+    maintainers:
+    - email: wkocjan@influxdata.com
+      name: wojciechka
+    - name: rawkode
+    name: telegraf-operator
+    type: application
+    urls:
+    - https://github.com/fcosta-td/helm-charts/releases/download/telegraf-operator-0.1.0/telegraf-operator-0.1.0.tgz
+    version: 0.1.0
   trinodb:
   - apiVersion: v1
     appVersion: "355"
@@ -346,4 +372,4 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.3/trinodb-0.1.3.tgz
     version: 0.1.3
-generated: "2022-01-09T22:18:50.118434305Z"
+generated: "2022-03-22T14:30:34.833744171Z"
