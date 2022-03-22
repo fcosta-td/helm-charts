@@ -2,7 +2,7 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: {{ template "telegraf-operator.fullname" . }}
+  name: "{{ template "telegraf-operator.fullname" . }}-pdb"
   labels:
     app: "{{ template "telegraf-operator.fullname" . }}"
 spec:
