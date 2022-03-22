@@ -1,0 +1,3 @@
+fullnameOverride: telegraf-operator
+hotReload: true
+nameOverride: telegraf-operator
