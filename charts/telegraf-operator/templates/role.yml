@@ -1,0 +1,19 @@
+{{- if .Values.rbac.create -}}
+{{- $fullName := include "telegraf-operator.fullname" . -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ $fullName | quote }}
+  labels:
+    app: "{{ template "telegraf-operator.fullname" . }}"
+    {{- if .Values.labels }}
+    {{ toYaml .Values.labels | indent 4 }}
+    {{- end }}
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - '*'
+{{- end -}}
