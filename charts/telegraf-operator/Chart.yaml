@@ -1,6 +1,7 @@
 apiVersion: v2
 appVersion: v1.3.5
 description: A Helm chart for Kubernetes to deploy telegraf-operator
+home: https://github.com/influxdata/telegraf-operator
 keywords:
 - telegraf
 - telegraf-operator
