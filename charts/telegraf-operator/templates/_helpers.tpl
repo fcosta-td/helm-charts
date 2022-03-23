@@ -28,7 +28,7 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Generate certificates for telegraf-operator mutating webhook
 */}}
-{{- define "telegraf-operator.non_certmanager" -}}
+{{- define "telegraf-operator.tls" -}}
 {{- $altNames := list ( printf "%s.%s" (include "telegraf-operator.fullname" .) .Release.Namespace ) ( printf "%s.%s.svc" (include "telegraf-operator.fullname" .) .Release.Namespace ) -}}
 {{- $ca := genCA "telegraf-operator-ca" 365 -}}
 {{- $cert := genSignedCert ( include "telegraf-operator.fullname" . ) nil $altNames 365 $ca -}}
