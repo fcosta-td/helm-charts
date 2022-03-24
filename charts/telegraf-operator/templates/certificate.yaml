@@ -17,16 +17,16 @@ metadata:
   labels:
     {{- include "telegraf-operator.labels" . | nindent 4 }}
 spec:
-  commonName: {{ .Values.server.certificate.domain | quote }}
+  commonName: {{ .Values.certificate.domain | quote }}
   dnsNames:
-    - {{ .Values.server.certificate.domain | quote }}
-    {{- range .Values.server.certificate.additionalHosts }}
+    - {{ .Values.certificate.domain | quote }}
+    {{- range .Values.certificate.additionalHosts }}
     - {{ . | quote }}
     {{- end }}
   issuerRef:
-    kind: {{ .Values.server.certificate.issuer.kind | quote }}
-    name: {{ .Values.server.certificate.issuer.name | quote }}
-  secretName: {{ .Values.server.certificate.secretName | quote }}
+    kind: {{ .Values.certificate.issuer.kind | quote }}
+    name: {{ .Values.certificate.issuer.name | quote }}
+  secretName: {{ .Values.certificate.secretName | quote }}
 {{- else -}}
 {{ ( include "telegraf-operator.auto_generated_certificate" . ) }}
 {{- end }}
