@@ -1,4 +1,4 @@
-{{- if .Values.certificate.auto_generate false -}}
+{{- if .Values.certificate.certmanager.enabled -}}
 {{- if .Values.apiVersionOverrides.certmanager -}}
 apiVersion: {{ .Values.apiVersionOverrides.certmanager }}
 {{- else if .Capabilities.APIVersions.Has "cert-manager.io/v1" }}
@@ -17,16 +17,16 @@ metadata:
   labels:
     {{- include "telegraf-operator.labels" . | nindent 4 }}
 spec:
-  commonName: {{ .Values.certificate.domain | quote }}
+  commonName: {{ .Values.certificate.certmanager.domain | quote }}
   dnsNames:
-    - {{ .Values.certificate.domain | quote }}
-    {{- range .Values.certificate.additionalHosts }}
+    - {{ .Values.certificate.certmanager.domain | quote }}
+    {{- range .Values.certificate.certmanager.additionalHosts }}
     - {{ . | quote }}
     {{- end }}
   issuerRef:
-    kind: {{ .Values.certificate.issuer.kind | quote }}
-    name: {{ .Values.certificate.issuer.name | quote }}
-  secretName: {{ .Values.certificate.secretName | quote }}
-{{- else -}}
-{{ ( include "telegraf-operator.auto_generated_certificate" . ) }}
+    kind: {{ .Values.certificate.certmanager.issuer.kind | quote }}
+    name: {{ .Values.certificate.certmanager.issuer.name | quote }}
+  secretName: {{ .Values.certificate.certmanager.secretName | quote }}
+{{- else }}
+{{ ( include "telegraf-operator.certificate.self_signed" . ) }}
 {{- end }}

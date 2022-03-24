@@ -10,14 +10,15 @@ apiVersionOverrides:
   certmanager: ""
 
 certificate:
-  auto_generate: false
-  # -- Certificate manager domain
-  domain: telegraf-operator.example.com
-  issuer:
-    kind: ClusterIssuer
-    name: letsencrypt
-  additionalHosts: []
-  secretName: telegraf-operator-tls
+  certmanager:
+    enabled: true
+    # -- Certificate manager domain
+    domain: telegraf-operator.example.com
+    issuer:
+      kind: ClusterIssuer
+      name: letsencrypt
+    additionalHosts: []
+    secretName: telegraf-operator-tls
 
 classes:
   secretName: "telegraf-operator-classes"

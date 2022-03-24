@@ -2,4 +2,5 @@ fullnameOverride: telegraf-operator
 hotReload: true
 nameOverride: telegraf-operator
 certificate:
-  auto_generate: true  # Use only for pipeline tests
+  certmanager:
+    enabled: false  # Use only for pipeline tests
