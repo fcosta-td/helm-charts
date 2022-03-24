@@ -14,8 +14,6 @@ kind: Certificate
 metadata:
   name: {{ include "telegraf-operator.fullname" . }}
   namespace: {{ .Release.Namespace }}
-  labels:
-    {{- include "telegraf-operator.labels" . | nindent 4 }}
 spec:
   commonName: {{ .Values.certificate.certmanager.domain | quote }}
   dnsNames:
