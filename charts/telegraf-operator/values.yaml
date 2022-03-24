@@ -5,6 +5,24 @@ image:
   pullPolicy: IfNotPresent
   sidecarImage: "docker.io/library/telegraf:1.19"
 
+apiVersionOverrides:
+  # -- String to override apiVersion of certmanager resources rendered by this helm chart
+  certmanager: "" # cert-manager.io/v1
+
+certificate:
+  auto_generate: false
+  # -- Certificate manager domain
+  domain: telegraf-operator.example.com
+  issuer:
+    # -- Certificate manager issuer
+    kind: # ClusterIssuer
+    # -- Certificate manager name
+    name: # letsencrypt
+  # -- Certificate manager additional hosts
+  additionalHosts: []
+  # -- Certificate manager secret name
+  secretName: telegraf-operator-tls
+
 classes:
   secretName: "telegraf-operator-classes"
   default: "base"
@@ -85,24 +103,4 @@ podAnnotations: {}
 # -- Additionals labels
 labels: {}
 
-livenessProbe:
-  # -- Liveness Probe settings
-  httpGet:
-    path: /
-    port: http
-  initialDelaySeconds: 30
-  periodSeconds: 10
-  timeoutSeconds: 5
-  failureThreshold: 3
-  successThreshold: 1
-
-readinessProbe:
-  # -- Rediness Probe settings
-  httpGet:
-    path: /
-    port: http
-  initialDelaySeconds: 15
-  periodSeconds: 10
-  timeoutSeconds: 5
-  failureThreshold: 3
-  successThreshold: 3
+revisionHistoryLimit: 0

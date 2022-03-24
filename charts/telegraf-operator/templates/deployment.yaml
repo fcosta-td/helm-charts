@@ -7,6 +7,7 @@ metadata:
     app: "{{ template "telegraf-operator.fullname" . }}"
 spec:
   replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   selector:
     matchLabels:
       app: "{{ template "telegraf-operator.fullname" . }}"
@@ -16,7 +17,7 @@ spec:
         app: "{{ template "telegraf-operator.fullname" . }}"
 {{- if eq .Values.certManager.enable false }}
       annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/tls.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "/certificate.yaml") . | sha256sum }}
 {{- end }}
     spec:
       containers:
