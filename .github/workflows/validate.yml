@@ -27,7 +27,7 @@ jobs:
             echo "::set-output name=changed::true"
           fi
       - name: Lint chart
-        run: ct lint --config ct.yaml --lint-conf lintconf.yaml --chart-yaml-schema chart_schema.yaml
+        run: ct lint --config ct.yaml
 
 
       - name: Create kind cluster

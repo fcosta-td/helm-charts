@@ -7,20 +7,16 @@ image:
 
 apiVersionOverrides:
   # -- String to override apiVersion of certmanager resources rendered by this helm chart
-  certmanager: "" # cert-manager.io/v1
+  certmanager: ""
 
 certificate:
   auto_generate: false
   # -- Certificate manager domain
   domain: telegraf-operator.example.com
   issuer:
-    # -- Certificate manager issuer
-    kind:  #  ClusterIssuer
-    # -- Certificate manager name
-    name:  #  letsencrypt
-  # -- Certificate manager additional hosts
+    kind: ClusterIssuer
+    name: letsencrypt
   additionalHosts: []
-  # -- Certificate manager secret name
   secretName: telegraf-operator-tls
 
 classes:
