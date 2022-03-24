@@ -1,0 +1,12 @@
+apiVersion: v2
+appVersion: v1.0.0
+description: A Helm chart for Kubernetes
+keywords:
+- sidecar
+- injector
+kubeVersion: '>= 1.13.0-r0'
+maintainers:
+- name: teste
+name: sidecar-injector
+type: application
+version: 0.1.0

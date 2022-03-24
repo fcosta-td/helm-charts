@@ -1,0 +1,80 @@
+# Default values for sidecar-injector.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+appname: sidecar-injector
+image:
+  repository: fcostatd/generic-sidecar
+  tag: 1.0.0
+  pullPolicy: Always
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 443
+  targetPort: 8443
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: sidecar-injector.example.local
+      paths: []
+
+  tls: []
+  #  - secretName: sidecar-injector-tls
+  #    hosts:
+  #      - sidecar-injector.example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+caBundle:
+
+config:
+  mutation: |
+    mutationConfigs:
+      - name: "mutation-config-1"
+        annotationNamespace: "test.pipeline.com"
+        annotationTrigger: "inject"
+        containers: ["test-sidecar"]
+  sidecar: |
+    containers:
+      - name: test-sidecar
+        image: registry.hub.docker.com/library/busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep infinity"]
+
+certificate:
+  # -- Certificate manager domain
+  domain: sidecar-injector.example.com
+  issuer:
+    # -- Certificate manager issuer
+    kind: ClusterIssuer
+    # -- Certificate manager name
+    name: selfsigned-issuer
+  # -- Certificate manager additional hosts
+  additionalHosts: []
+  # -- Certificate manager secret name
+  secretName: root-secret

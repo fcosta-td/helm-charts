@@ -1,0 +1,12 @@
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: sidecar-injector.example.local
+      paths: []
+  tls:
+    - secretName: root-secret
+      hosts:
+        - sidecar-injector.example.local
