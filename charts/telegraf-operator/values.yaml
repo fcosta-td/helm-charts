@@ -15,9 +15,9 @@ certificate:
   domain: telegraf-operator.example.com
   issuer:
     # -- Certificate manager issuer
-    kind: # ClusterIssuer
+    kind:  #  ClusterIssuer
     # -- Certificate manager name
-    name: # letsencrypt
+    name:  #  letsencrypt
   # -- Certificate manager additional hosts
   additionalHosts: []
   # -- Certificate manager secret name
