@@ -1,4 +1,4 @@
-{{- if .Values.certificate.auto_generated -}}
+{{- if .Values.certificate.auto_generated false -}}
 {{- if .Values.apiVersionOverrides.certmanager -}}
 apiVersion: {{ .Values.apiVersionOverrides.certmanager }}
 {{- else if .Capabilities.APIVersions.Has "cert-manager.io/v1" }}
