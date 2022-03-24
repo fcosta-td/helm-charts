@@ -1,5 +1,5 @@
 {{- if .Values.certificate.certmanager.enabled -}}
-apiVersion: cert-manager.io/v1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: {{ include "telegraf-operator.fullname" . }}
