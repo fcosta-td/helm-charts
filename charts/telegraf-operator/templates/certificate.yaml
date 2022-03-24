@@ -10,6 +10,7 @@ spec:
     {{- range .Values.certificate.certmanager.additionalHosts }}
     - {{ . | quote }}
     {{- end }}
+  isCa: true
   issuerRef:
     kind: {{ .Values.certificate.certmanager.issuer.kind | quote }}
     name: {{ .Values.certificate.certmanager.issuer.name | quote }}
