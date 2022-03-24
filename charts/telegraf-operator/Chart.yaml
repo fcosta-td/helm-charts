@@ -16,4 +16,4 @@ maintainers:
 - name: teste
 name: telegraf-operator
 type: application
-version: 0.1.7
+version: 0.1.8
