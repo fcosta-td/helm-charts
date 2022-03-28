@@ -1,5 +1,17 @@
 apiVersion: v1
 entries:
+  sidecar-injector:
+  - apiVersion: v2
+    appVersion: v0.5.0
+    created: "2022-03-24T17:27:05.221658415Z"
+    description: A Helm chart for Kubernetes
+    maintainers:
+    - name: teste
+    name: sidecar-injector
+    type: application
+    urls:
+    - https://github.com/fcosta-td/helm-charts/releases/download/sidecar-injector-0.1.1/sidecar-injector-0.1.1.tgz
+    version: 0.1.1
   alertmanager:
   - apiVersion: v2
     appVersion: v0.23.0
