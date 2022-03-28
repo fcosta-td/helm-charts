@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ .Values.appname }}-certificate
+  namespace: {{ .Values.namespace }}
+spec:
+  commonName: {{ .Values.certificate.domain | quote }}
+  dnsNames:
+    - {{ .Values.certificate.domain | quote }}
+    - localhost
+  {{- range .Values.certificate.additionalHosts }}
+    - {{ . | quote }}
+  {{- end }}
+  usages:
+    - digital signature
+    - key encipherment
+    - server auth
+    - client auth
+  issuerRef:
+    name: {{ .Values.certificate.issuer.name }}
+    kind: {{ .Values.certificate.issuer.kind }}
+  secretName: {{ .Values.appname }}-certificate

@@ -1,6 +1,0 @@
-fullnameOverride: telegraf-operator
-hotReload: true
-nameOverride: telegraf-operator
-certificate:
-  certmanager:
-    enabled: false  # Use only for pipeline tests
