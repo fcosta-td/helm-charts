@@ -255,10 +255,10 @@ entries:
     version: 4.3.0
   sidecar-injector:
   - apiVersion: v2
-    appVersion: v1.0.0
-    created: "2022-03-28T16:35:36.617995812Z"
+    appVersion: v0.5.0
+    created: "2022-03-28T16:54:19.704497912Z"
     description: A Helm chart for Kubernetes
-    digest: b905387727b2d9b35390d25f9123d54d434d8cbd69fc77a5afb8c6442b1f9cef
+    digest: 164b45d161049bfca8cb3367876a09c660e716795e43da022d9661922533bae5
     keywords:
     - sidecar
     - injector
@@ -268,8 +268,8 @@ entries:
     name: sidecar-injector
     type: application
     urls:
-    - https://github.com/fcosta-td/helm-charts/releases/download/sidecar-injector-0.1.0/sidecar-injector-0.1.0.tgz
-    version: 0.1.0
+    - https://github.com/fcosta-td/helm-charts/releases/download/sidecar-injector-0.1.1/sidecar-injector-0.1.1.tgz
+    version: 0.1.1
   telegraf-operator:
   - apiVersion: v2
     appVersion: v1.3.5
@@ -668,4 +668,4 @@ entries:
     urls:
     - https://github.com/fcosta-td/helm-charts/releases/download/trinodb-0.1.3/trinodb-0.1.3.tgz
     version: 0.1.3
-generated: "2022-03-28T16:35:36.618080513Z"
+generated: "2022-03-28T16:54:19.704653115Z"
